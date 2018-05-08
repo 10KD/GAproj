@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SongsApiApplication {
 
-	@GetMapping("/")
-	public String home() {
-		return "some songs";
-	}
+
 
 	public static void main(String[] args) {
 

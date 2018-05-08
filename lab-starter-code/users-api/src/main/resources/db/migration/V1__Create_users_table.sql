@@ -1,0 +1,6 @@
+create table USERS (
+    ID serial,
+    USER_NAME varchar(100) NOT NULL,
+    ADD COLUMN FIRST_NAME VARCHAR(100),
+    ADD COLUMN LAST_NAME VARCHAR(100);
+);
