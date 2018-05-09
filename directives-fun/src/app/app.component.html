@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <pre *ngIf="title == 'app'">{{pokemon[0].name | uppercase}}</pre>
+  <input [(ngModel)]="trainer.name">
+  <button type="submit" (click)="onClick()" >submit</button>
+  <interval-dir (everySecond)="everySecond()"></interval-dir>
+  <ul>
+    <li *ngFor="let poke of pokemon">{{poke.name}} - trained by {{trainer.name}}</li>
+    
+  </ul>
+</div>
+
