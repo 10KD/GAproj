@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { DeathSquareComponent } from './death-square/death-square.component';
 import { LaserCannonComponent } from './laser-cannon/laser-cannon.component';
 import { TurretComponent } from './turret/turret.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
     DeathSquareComponent,
