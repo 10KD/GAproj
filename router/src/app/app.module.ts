@@ -6,17 +6,25 @@ import { AboutComponent } from './about/about.component';
 import { LinksComponent } from './links/links.component';
 import { ResumeComponent } from './resume/resume.component';
 import { AppRoutingModule } from './app-routing.module';
+import { EarlyLifeComponent } from './early-life/early-life.component';
+import { CareerComponent } from './career/career.component';
+import { AboutRoutingModule } from './about/about-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     LinksComponent,
-    ResumeComponent
+    ResumeComponent,
+    EarlyLifeComponent,
+    CareerComponent,
+ 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AboutRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

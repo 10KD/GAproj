@@ -5,13 +5,12 @@ import { AboutComponent } from './about/about.component';
 import { LinksComponent } from './links/links.component';
 import { ResumeComponent } from './resume/resume.component';
 
+
+
 const routes: Routes = [
+
     {
-        path: 'about',
-        component: AboutComponent
-    },
-    {
-        path: 'resume',
+        path: 'resume/:id',
         component: ResumeComponent
     },
     {
