@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, catchError } from 'rxjs/operators'
+import { SearchService } from './search.service';
+
 
 @Component({
   selector: 'app-search',
@@ -9,16 +13,23 @@ import { Http } from '@angular/http';
 export class SearchComponent implements OnInit {
 
   weather: any;
+  searchSubject = new Subject();
 
-  constructor(private http: Http) { }
-
-  findWeather(zip){
-    this.http.get('http://api.openweathermap.org/data/2.5/weather?zip=' + zip + ',us&appid=052f26926ae9784c2d677ca7bc5dec98&&units=imperial')
-    .toPromise()
-    .then(response => this.weather = response.json());
-  }
+  constructor(private searchService: SearchService) { }
 
   ngOnInit() {
+    this.searchSubject
+      .pipe(debounceTime(1000))
+      .pipe(distinctUntilChanged())
+      .subscribe(zip1 =>
+        this.searchService.createAPI(zip1)
+          .subscribe(response => this.weather = response.json())
+      )
+
+  }
+
+  findWeather(zip) {
+    this.searchSubject.next(zip);
   }
 
 }

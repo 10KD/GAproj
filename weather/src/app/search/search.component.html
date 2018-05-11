@@ -1,7 +1,6 @@
 <section>
   <h2>What's the Weather Where You're At?</h2>
-  <input [(ngModel)]="zip" type="text" placeholder="Zip Code Here" />
-  <input (click)="findWeather(zip)"type="submit" value="Search" />
+  <input [(ngModel)]="zip" type="text" placeholder="Zip Code Here" (keyup)="findWeather(zip)" />
 </section>
 <section *ngIf="weather">
   <h3>Here's the weather in {{weather.name}}:</h3>
