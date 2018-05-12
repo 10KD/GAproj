@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -19,14 +18,15 @@ export class InfoWindowComponent implements OnInit {
   findTurret(turretNumber) {
     
     this.http.get('http://localhost:3000/api/turret/' + turretNumber)
-    .toPromise()
-    .then(response => {
+    .subscribe(response => {
         console.log(response.json());
         this.dataBanks = response.json();
       });
   }
 
   ngOnInit() {
+    console.log(this.route);
+    
     this.route.params.forEach(param => this.findTurret(param.id));
   }
 

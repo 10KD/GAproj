@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TurretComponent implements OnInit {
   @Input('turretNumber') 
   turretNumber: number;
+  
   constructor() { }
 
   ngOnInit() {
