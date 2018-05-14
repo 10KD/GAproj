@@ -27,8 +27,5 @@ export class ReadProfileComponent implements OnInit {
         return profile.id === parseInt(param.id)
       });   
     });
-
-    console.log("hello");
-    
   }
 }
