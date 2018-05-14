@@ -13,6 +13,14 @@ export class ReadProfileComponent implements OnInit {
   profile: any;
   constructor(private route: ActivatedRoute) { }
 
+  editProfile(){
+    console.log("edit profile");
+  }
+
+  deleteProfile(){
+    console.log("delete profile");
+  }
+
   ngOnInit() {
     this.route.params.forEach(param => {
       this.profile = PROFILES.find(profile => {
