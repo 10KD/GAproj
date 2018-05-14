@@ -17,7 +17,7 @@ export class ListProfilesComponent implements OnInit {
     this.http.get('/api/profiles')
       .toPromise()
       .then(response => this.profiles = response.json());
-    console.log(this.profiles);
+   
     
   }
 

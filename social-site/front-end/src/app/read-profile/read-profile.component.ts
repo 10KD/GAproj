@@ -13,23 +13,12 @@ export class ReadProfileComponent implements OnInit {
   id: Number;
   profile: any;
   constructor(private route: ActivatedRoute, private http: Http) { }
-
-  editProfile(){
-    console.log("edit profile");
-    // this.http.patch()
+  
+  deleteProfile(id){
+    this.http.delete('/api/profiles/' + id)
+    .toPromise()
+    .then(response => console.log("profile: " + id + " has been deleted"));
   }
-
-  deleteProfile(){
-    console.log("delete profile");
-  }
-
-  // ngOnInit() {
-  //   this.route.params.forEach(param => {
-  //     this.profile = PROFILES.find(profile => {
-  //       return profile.id === parseInt(param.id)
-  //     });   
-  //   });
-  // }
   paramid: Number;
   ngOnInit() {
     
@@ -38,16 +27,13 @@ export class ReadProfileComponent implements OnInit {
         this.paramid = param.id;
       }
     });
-    console.log(this.paramid);
-    
     this.http.get('/api/profiles/' + this.paramid)
       .toPromise()
       .then(response => {
 
         this.profile = response.json();
         console.log(this.profile);
-      }
-      ); 
+      }); 
       
     
   }

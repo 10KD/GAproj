@@ -6,5 +6,7 @@
   <a routerLink="/profiles/edit/{{profile.id}}">
     <button type="edit">Edit</button>
   </a>
-  <button type="delete" (click)="deleteProfile()">Delete</button>
+  <a routerLink="/">
+    <button type="delete" (click)="deleteProfile(profile.id)">Delete</button>
+  </a>
 </section>

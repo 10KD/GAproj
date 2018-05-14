@@ -9,4 +9,6 @@
   Bio: 
   <input [(ngModel)]="bio" type="text" placeholder="Bio Here"/>
 </section>
-<input (click)="createProfile(profileName, bio)" type="submit" />
+<a routerLink="/">
+  <input (click)="createProfile(profileName, bio)" type="submit" />
+</a>

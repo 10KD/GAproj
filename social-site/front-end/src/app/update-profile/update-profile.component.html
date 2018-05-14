@@ -1,8 +1,13 @@
-<h3>
-  Edit Profile: {{profile.profileName}}
-</h3>
-<section>
-  Bio:
-  <input [(ngModel)]="bio" type="text" placeholder="Bio Here" />
+<section *ngIf="profile">
+
+  <h3>
+    Edit Profile: {{profile.profileName}}
+  </h3>
+  <section>
+    Bio:
+    <input [(ngModel)]="bio" type="text" placeholder="Bio Here" />
+  </section>
+  <a routerLink="/">
+    <input (click)="updateProfile(profile.profileName, bio)" type="submit" />
+  </a>
 </section>
-<input (click)="updateProfile(profile.profileName, bio)" type="submit" />
