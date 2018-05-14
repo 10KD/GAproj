@@ -9,20 +9,16 @@ import { Http } from '@angular/http';
 })
 export class ListProfilesComponent implements OnInit {
   profiles: any;
-  // profiles = PROFILES;
+ 
 
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8080/profiles')
+    this.http.get('/api/profiles')
       .toPromise()
       .then(response => this.profiles = response.json());
     console.log(this.profiles);
     
   }
-
-  // ngOnInit() {
-
-  // }
 
 }
