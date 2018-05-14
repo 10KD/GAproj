@@ -2,5 +2,7 @@
   <dd>Profile Name: {{profile.profile_name}}</dd>
   <dd>Bio: {{profile.bio}}</dd>
 </dl>
-<button type="edit" (click)="editProfile()">Edit</button>
+<a routerLink="/profiles/edit/{{profile.id}}">
+  <button type="edit">Edit</button>
+</a>
 <button type="delete" (click)="deleteProfile()">Delete</button>

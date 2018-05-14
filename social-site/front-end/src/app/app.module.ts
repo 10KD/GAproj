@@ -6,6 +6,7 @@ import { ListProfilesComponent } from './list-profiles/list-profiles.component';
 import { ReadProfileComponent } from './read-profile/read-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'profiles/:id',
     component: ReadProfileComponent
   },
+  {
+    path: 'profiles/edit/:id',
+    component: UpdateProfileComponent
+  }
 ];
 
 @NgModule({
@@ -30,7 +35,8 @@ const routes: Routes = [
     AppComponent,
     ListProfilesComponent,
     ReadProfileComponent,
-    CreateProfileComponent
+    CreateProfileComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

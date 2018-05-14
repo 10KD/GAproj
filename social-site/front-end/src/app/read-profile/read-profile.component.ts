@@ -25,9 +25,7 @@ export class ReadProfileComponent implements OnInit {
     this.route.params.forEach(param => {
       this.profile = PROFILES.find(profile => {
         return profile.id === parseInt(param.id)
-      });
-     
-      
+      });   
     });
 
     console.log("hello");
