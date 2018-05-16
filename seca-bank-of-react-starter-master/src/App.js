@@ -4,6 +4,9 @@ import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from "./components/Login";
 import DebitsList from './components/DebitsList';
+import './App.css';
+import axios from 'axios';
+import AccountBalance from './components/AccountBalance';
 
 
 class App extends Component {
@@ -22,6 +25,42 @@ class App extends Component {
 
  
 
+    componentDidMount() {
+        this.getBalance();
+    }
+
+    getBalance = () => {
+
+        axios.get('/debits')
+            .then((response) => {
+                this.setState({ debits: response.data });
+            }).then(
+                axios.get('/credits')
+                    .then((response) => {
+                        this.setState({ credits: response.data });
+                        if (this.state.debits) {    
+                            this.setState({ accountBalance: this.calculateBalance(this.state.debits, this.state.credits) });
+                        }
+                    })
+            )
+
+    }
+
+    calculateBalance = (debits, credits) => {
+        console.log(debits);
+        console.log(credits);
+        
+        let debitsAmount = 0
+        debits.forEach(debit => {
+            debitsAmount += debit.amount;
+        });
+        let creditsAmount = 0
+        credits.forEach(credit => {
+            creditsAmount += credit.amount;
+        });
+
+        return (creditsAmount - debitsAmount).toFixed(2);
+    }
     
 
     mockLogIn = (logInInfo) => {
@@ -46,7 +85,7 @@ class App extends Component {
                     <Route exact path="/userProfile" render={UserProfileComponent}/>
                     <Route exact path="/login" render={LogInComponent}/>
                     <Route exact path="/debits" component={DebitsList}/>
-            
+                    <AccountBalance accountBalance={this.state.accountBalance} />
                 </div>
             </Router>
         );

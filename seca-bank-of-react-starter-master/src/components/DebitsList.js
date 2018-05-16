@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 class DebitsList extends Component {
 
@@ -17,7 +19,7 @@ class DebitsList extends Component {
     render() {
         const debitComponents = this.state.debits.map((debit, i) => {
             return (
-                <div key={i}>
+                <div key={i} className="debit-unit">
                     <p>{debit.description}</p>
                     <p>{debit.amount}</p>
                     <p>{debit.date}</p>
@@ -25,9 +27,10 @@ class DebitsList extends Component {
             );
         });
         return (
-            <div>
+            <div className="debit">
                 <h1>Debits</h1>
                 {debitComponents}
+                <Link to="/">Home</Link>
             </div>
         )
     }
