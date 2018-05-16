@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
-import DebitsList from "./components/DebitsList";
 import LogIn from "./components/Login";
+import DebitsList from './components/DebitsList';
 
 
 class App extends Component {
@@ -20,44 +20,7 @@ class App extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     this.getBalance();
-    // }
-
-    // getBalance = () => {
-    //     let debits = null;
-    //     let credits = null;
-
-    //     axios.get('/debits')
-    //         .then((response) => {
-    //             debits = response.data
-    //         })
-    //     axios.get('/credits')
-    //         .then((response) => {
-    //             credits = response.data
-    //         })
-
-    //     console.log(debits);
-    //     console.log(credits);
-
-
-    //     if (debits != null && credits != null) {
-    //         console.log(debits);
-    //         console.log(credits);
-
-    //         this.setState({ accountBalance: this.calculateBalance(debits, credits) });
-    //     }
-
-    // }
-
-    // calculateBalance = (debits, credits) => {
-    //     console.log("debits " + debits);
-
-    //     let debitsAmount = debits.reduce(debit => debit.amount);
-    //     let creditsAmount = credits.reduce(credit => credit.amount);
-
-    //     return creditsAmount - debitsAmount;
-    // }
+ 
 
     
 
@@ -74,7 +37,7 @@ class App extends Component {
             <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
         )
         const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
-
+        
 
         return (
             <Router>
@@ -82,6 +45,7 @@ class App extends Component {
                     <Route exact path="/" render={HomeComponent}/>
                     <Route exact path="/userProfile" render={UserProfileComponent}/>
                     <Route exact path="/login" render={LogInComponent}/>
+                    <Route exact path="/debits" component={DebitsList}/>
             
                 </div>
             </Router>

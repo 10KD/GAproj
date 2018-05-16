@@ -27,19 +27,14 @@ class Home extends Component {
 
             axios.get('/credits')
             .then((response) => {
-                this.setState({credits: response.data});
-     
-                console.log(this.state.debits);
-                console.log(this.state.credits);
+                this.setState({ credits: response.data });
                 this.setState({ accountBalance: this.calculateBalance(this.state.debits, this.state.credits) });
             })
         )
             
     }
 
-    calculateBalance = (debits, credits) => {
-
-            
+    calculateBalance = (debits, credits) => {   
             let debitsAmount = 0
             debits.forEach(debit => {
                 debitsAmount += debit.amount;
@@ -49,9 +44,7 @@ class Home extends Component {
                 creditsAmount += credit.amount;
             });
             
-            
-            return creditsAmount - debitsAmount;
-    
+            return (creditsAmount - debitsAmount).toFixed(2);
     }
 
     render() {
@@ -63,6 +56,8 @@ class Home extends Component {
                 <Link to="/userProfile">User Profile</Link>
                 <br></br>
                 <Link to="/login">Log In</Link>
+                <br></br>
+                <Link to="/debits">Debits</Link>
                 
                 
 

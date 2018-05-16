@@ -15,9 +15,19 @@ class DebitsList extends Component {
     }
 
     render() {
+        const debitComponents = this.state.debits.map((debit, i) => {
+            return (
+                <div key={i}>
+                    <p>{debit.description}</p>
+                    <p>{debit.amount}</p>
+                    <p>{debit.date}</p>
+                </div>
+            );
+        });
         return (
             <div>
-                {JSON.stringify(this.state.debits)}
+                <h1>Debits</h1>
+                {debitComponents}
             </div>
         )
     }
