@@ -16,10 +16,13 @@ class ProductList extends Component {
                     description={product.description}
                     price={product.price}
                     key={index} />;
-                    <button
-                        onClick={() => this.props.deleteProduct(product, index)}>
-                        Delete
-                        </button>
+                    {   
+                        this.props.adminView ? 
+                            <button
+                                onClick={() => this.props.deleteProduct(product, index)}>
+                                Delete
+                            </button> : null
+                    }
                 </div>
             );
         });

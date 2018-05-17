@@ -47,11 +47,11 @@ class HomePage extends Component {
     }
 
     render() {
-        return (
+        return( 
             <div>
                 <h1>My Hardware Store</h1>
                 <div>
-                    <span>Currently On Sale: {this.state.itemCurrentlyOnSale}!</span>
+                    <span>Currently On Slae: {this.state.itemCurrentlyOnSale}!</span>
                     <span>
                         <button onClick={this.toggleEditSaleItem}>
                             {this.state.editSaleItem ? 'Hide' : 'Edit Sale Item'}
