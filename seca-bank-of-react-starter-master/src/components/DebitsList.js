@@ -5,34 +5,33 @@ import { Link } from 'react-router-dom';
 
 class DebitsList extends Component {
 
-    state = {
-        debits: []
-    }
-
-    componentDidMount() {
-        axios.get('/debits')
-            .then((response) => {
-                this.setState({debits: response.data})
-            })
-    }
+  
 
     render() {
-        const debitComponents = this.state.debits.map((debit, i) => {
+        const debitStyles = {
+            color: "black",
+            fontSize: '14px',
+            borderBottom: "1px solid"
+        };
+        if (this.props.debits) {
+            
+            const debitComponents = this.props.debits.map((debit, i) => {
+                return (
+                    <div key={i} style={debitStyles}>
+                        <p>{debit.description}</p>
+                        <p>{debit.amount}</p>
+                        <p>{debit.date}</p>
+                    </div>
+                );
+            });
             return (
-                <div key={i} className="debit-unit">
-                    <p>{debit.description}</p>
-                    <p>{debit.amount}</p>
-                    <p>{debit.date}</p>
+                <div className="debit">
+                    <h1>Debits</h1>
+                    {debitComponents}
+                    <Link to="/">Home</Link>
                 </div>
             );
-        });
-        return (
-            <div className="debit">
-                <h1>Debits</h1>
-                {debitComponents}
-                <Link to="/">Home</Link>
-            </div>
-        )
+        }
     }
 }
 

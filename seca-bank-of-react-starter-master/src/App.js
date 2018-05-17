@@ -71,12 +71,14 @@ class App extends Component {
 
     render() {
 
-        const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>)
+        const HomeComponent = () => (<Home 
+            accountBalance={this.state.accountBalance}/>)
         const UserProfileComponent = () => (
             <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
         )
         const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
         
+        const DebitsListComponent = () => (<DebitsList debits={this.state.debits}/>)
 
         return (
             <Router>
@@ -84,7 +86,7 @@ class App extends Component {
                     <Route exact path="/" render={HomeComponent}/>
                     <Route exact path="/userProfile" render={UserProfileComponent}/>
                     <Route exact path="/login" render={LogInComponent}/>
-                    <Route exact path="/debits" component={DebitsList}/>
+                    <Route exact path="/debits" render={DebitsListComponent}/>
                     <AccountBalance accountBalance={this.state.accountBalance} />
                 </div>
             </Router>
