@@ -12,6 +12,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { ReadUserComponent } from './read-user/read-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { NycRecordsComponent } from './nyc-records/nyc-records.component';
 
 
 const routes: Routes = [
@@ -63,7 +64,8 @@ const routes: Routes = [
     CreateUserComponent,
     ListUsersComponent,
     ReadUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    NycRecordsComponent
   ],
   imports: [
     BrowserModule,
