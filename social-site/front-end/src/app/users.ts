@@ -1,6 +1,6 @@
 export const USERS = [
     {
-        id: 3,
+        id: 1,
         userName: 'Lebron',
         firstName: 'test1',
         lastName: 'test1L'
@@ -12,7 +12,7 @@ export const USERS = [
         lastName: 'test2L'
     },
     {
-        id: 1,
+        id: 3,
         userName: 'James',
         firstName: 'test3',
         lastName: 'test3L'

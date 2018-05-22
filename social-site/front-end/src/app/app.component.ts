@@ -9,7 +9,7 @@ import { USERS } from './users';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'NYC API';
+  title = 'NYC Records API';
   profiles = PROFILES;
   users = USERS;
 }
