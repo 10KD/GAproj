@@ -1,18 +1,18 @@
 export const RECORDS = [
     {
         id: 1,
-        categoryName: 'Promoted Employees',
-        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED'
+        categoryName: 'Fire Department',
+        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED&agency_name=FIRE%20DEPARTMENT'
         
     },
     {
         id: 2,
-        categoryName: 'james',
-        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED'
+        categoryName: 'Police Department',
+        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED&agency_name=POLICE%20DEPARTMENT'
     },
     {
         id: 3,
-        categoryName: 'lel',
-        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED'
+        categoryName: 'Sanitation Department',
+        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED&agency_name=DEPARTMENT%20OF%20SANITATION'
     }
 ]
