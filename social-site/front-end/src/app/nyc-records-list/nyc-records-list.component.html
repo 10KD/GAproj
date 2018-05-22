@@ -1,3 +1,8 @@
-<p>
-  nyc-records-list works!
-</p>
+<ul *ngIf="parsedRecords">
+  <li *ngFor="let parsedRecord of parsedRecords">
+    <!-- <a routerLink="/recordsList/{{record.id}}">record</a> -->
+    <p *ngFor="let line of parsedRecord">
+      {{line}}
+    </p>
+  </li>
+</ul>

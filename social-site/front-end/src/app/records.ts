@@ -1,15 +1,18 @@
 export const RECORDS = [
     {
-        id: 3,
-        categoryName: 'Lebron',
+        id: 1,
+        categoryName: 'Promoted Employees',
+        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED'
         
     },
     {
         id: 2,
         categoryName: 'james',
+        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED'
     },
     {
-        id: 1,
+        id: 3,
         categoryName: 'lel',
+        url: 'https://data.cityofnewyork.us/resource/buex-bi6w.json?short_title=PROMOTED'
     }
 ]
