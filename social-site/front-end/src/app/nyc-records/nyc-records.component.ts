@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RECORDS } from '../records';
 
 @Component({
   selector: 'app-nyc-records',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nyc-records.component.css']
 })
 export class NycRecordsComponent implements OnInit {
-
+  records = RECORDS;
   constructor() { }
 
   ngOnInit() {

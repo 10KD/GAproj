@@ -13,6 +13,7 @@ import { ListUsersComponent } from './list-users/list-users.component';
 import { ReadUserComponent } from './read-user/read-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { NycRecordsComponent } from './nyc-records/nyc-records.component';
+import { NycRecordsListComponent } from './nyc-records-list/nyc-records-list.component';
 
 
 const routes: Routes = [
@@ -50,7 +51,16 @@ const routes: Routes = [
   {
     path: 'users/edit/:id',
     component: UpdateUserComponent
-  }
+  },
+  {
+    path: 'records',
+    component: NycRecordsComponent
+  },
+  {
+    path: 'records/:id',
+    component: NycRecordsListComponent
+  },
+
 
 ];
 
@@ -65,7 +75,8 @@ const routes: Routes = [
     ListUsersComponent,
     ReadUserComponent,
     UpdateUserComponent,
-    NycRecordsComponent
+    NycRecordsComponent,
+    NycRecordsListComponent
   ],
   imports: [
     BrowserModule,

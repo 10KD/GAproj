@@ -1,3 +1,8 @@
-<p>
-  nyc-records works!
-</p>
+<!-- <ul *ngIf="records"> -->
+<ul>
+  <li *ngFor="let record of records">
+    <a routerLink="/records/{{record.id}}">{{record.categoryName}}</a>
+    <br>
+    <br>
+  </li>
+</ul>
