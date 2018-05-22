@@ -8,6 +8,10 @@ import { ReadProfileComponent } from './read-profile/read-profile.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { ReadUserComponent } from './read-user/read-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 const routes: Routes = [
@@ -55,7 +59,11 @@ const routes: Routes = [
     ListProfilesComponent,
     ReadProfileComponent,
     CreateProfileComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    CreateUserComponent,
+    ListUsersComponent,
+    ReadUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
