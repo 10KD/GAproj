@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { PROFILES } from './profiles';
-import { USERS } from './users';
-
 
 @Component({
   selector: 'app-root',
@@ -9,7 +6,5 @@ import { USERS } from './users';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'NYC API';
-  profiles = PROFILES;
-  users = USERS;
+  title = 'app';
 }

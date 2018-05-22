@@ -28,7 +28,25 @@ const routes: Routes = [
   {
     path: 'profiles/edit/:id',
     component: UpdateProfileComponent
+  },
+  {
+    path: 'users',
+    component: ListUsersComponent
+  },
+  {
+    path: 'users/new',
+    component: CreateUserComponent
+  },
+
+  {
+    path: 'users/:id',
+    component: ReadUserComponent
+  },
+  {
+    path: 'users/edit/:id',
+    component: UpdateUserComponent
   }
+
 ];
 
 @NgModule({
